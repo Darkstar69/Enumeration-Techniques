@@ -14,15 +14,22 @@
 </details>
 
 ### Other Enumeration Techniques (unix)
-  `nmap -v -p 139,445 -oG smb.txt <ip range>` \
-  `nbt scan -r <ip/range>`\
-  `nmap -v -p 139,445 –script smb-os-discovery <ip>`
-  
+```
+nmap -v -p 139,445 -oG smb.txt <ip range>
+```
+```
+nbt scan -r <ip/range>
+```
+```
+nmap -v -p 139,445 –script smb-os-discovery <ip>
+```
 **Extra** `smbclient //IP/SHARE` **(for connecting)**
 
   
 ### On Windows
-  `Net view \\dc01 /all`
+```
+Net view \\dc01 /all
+```
 
 
 ## Telnet Enumeration
@@ -92,7 +99,9 @@ Download [rockyou.txt](https://raw.githubusercontent.com/zacheller/rockyou/refs/
 **Hope you got the password now login to ssh** `ssh administrator@<ip>` then enter password 🙂
 
 ## MYSQL Enumeration (Used Vuln Lab)
-**1. Find the port on which mysql db (default port 3306) running using nmap (same as previous command)**\
+**1. Find the port on which mysql db (default port 3306) running using nmap (same as previous command)**
+- I alread had username and passowrd root:password (vuln lab)
+
 **2. Open metasploit and search for mysql_sql** : `search mysql_sql` and\
 select using `use auxiliary/admin/mysql/mysql_sql` or `use 0` (0 is the index number mentioned in msfconsole)\
 **3. Set the required parameters like RHOSTS USERNAME and PASSWORD and run**\
