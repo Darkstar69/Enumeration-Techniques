@@ -3,8 +3,7 @@
 **1. Scan the network and find out port with** : `nmap -sV -p <port> <ip>` **(default port 445)**\
 **2. After that enumerate smb server with Enum4linux** : `enum4linux [options] <ip>`
 <details>
-  <h3>Basic enum4linux flags</h3>
-  <summary>options</summary>
+  <summary>Enum4linux options</summary>
   <p>-U  get userlist</p>
   <p>-M  get machine list</p>
   <p>-N   get namelist dump (different from -U and-M)</p>
