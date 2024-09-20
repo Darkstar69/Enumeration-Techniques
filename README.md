@@ -107,5 +107,8 @@ select using `use auxiliary/admin/mysql/mysql_sql` or `use 0` (0 is the index nu
 **3. Set the required parameters like RHOSTS USERNAME and PASSWORD and run**\
 **4. Use module `auxiliary/scanner/mysql/mysql_schemadump` to gather more info**\
 **5. Next this module for hashdump `auxiliary/scanner/mysql/mysql_hashdump`**\
-**Got the hashdump and start using hashcat or john to crack the hash** : `hashcat -a 0 -m 300 <hash> /path/rockyou.txt`\
+**Got the hashdump and start using hashcat or john to crack the hash** : 
+```
+hashcat -a 0 -m 300 <hash> /path/rockyou.txt
+```
 **After getting the password logged in due to insecure and same password on ssh**
