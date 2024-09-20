@@ -64,7 +64,8 @@ Extra : **Download NFS files using scp** : `scp -i id_rsa username@<target ip>:/
 </details>
 
 ## SMTP Enumeration
-**1. As always find out the port SMPT running on using (default port 25)** : `nmap -sV -p- <target ip>` or `nmap -A -p- <target ip>`\
+**1. As always find out the port SMPT running on using (default port 25)** :`nmap -sV -p- <target ip>`\
+or `nmap -A -p- <target ip>`\
   **Important for next step: Install metasploit-framework for using available modules for enumeration and exploitation**\
   **`sudo apt install metasploit-framework` or refer to this [Metasploit-Framework](https://github.com/rapid7/metasploit-framework?tab=readme-ov-file)**\
 **2. Start Metasploit-Framework using** : `msfconsole`\
