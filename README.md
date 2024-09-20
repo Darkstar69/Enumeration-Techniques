@@ -92,8 +92,8 @@ Got the info !! 😸
 
 ## MYSQL Enumeration (Used Vuln Lab)
 **1. Find the port on which mysql db (default port 3306) running using nmap (same as previous command)**\
-**2. Open metasploit and search for mysql_sql** : `search mysql_sql` and select\ 
-  select using `use auxiliary/admin/mysql/mysql_sql` or `use 0` (0 is the index number mentioned in msfconsole)\
+**2. Open metasploit and search for mysql_sql** : `search mysql_sql` and\
+select using `use auxiliary/admin/mysql/mysql_sql` or `use 0` (0 is the index number mentioned in msfconsole)\
 **3. Set the required parameters like RHOSTS USERNAME and PASSWORD and run**\
 **4. Use module `auxiliary/scanner/mysql/mysql_schemadump` to gather more info**\
 **5. Next this module for hashdump `auxiliary/scanner/mysql/mysql_hashdump`**\
