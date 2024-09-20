@@ -82,7 +82,7 @@ Got the info !! 😸
 **2. Set required options** : `set rhosts <target ip>` & `set user_file /path/top-usernames-shortlist.txt`\
   **Download the username file from here**: [usernames/seclists](https://raw.githubusercontent.com/danielmiessler/SecLists/refs/heads/master/Usernames/top-usernames-shortlist.txt)\
 **3. Run the exploit:** `run` or `exploit`\
-**Yay !! Got the username [administrator]()**
+Yay !! Got the username **administrator**
 
 <h3>Now we'll use Hydra to dictionary attack on ssh with the username for passwords using rockyou.txt</h3>
 
